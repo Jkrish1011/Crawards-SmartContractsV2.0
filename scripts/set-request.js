@@ -82,12 +82,12 @@ async function main() {
   // you can run https://go.dev/play/p/3id7HAhf-Wi to get schema hash and claimPathKey using YOUR schema
   // suggestion: Use your own go application with that code rather than using playground (it can give a timeout just because it’s restricted by the size of dependency package)
   // const schemaBigInt = "74977327600848231385663280181476307657"
-  const schemaBigInt = "248033854100812574847883620902273514958"
+  const schemaBigInt = "87243374877937714218652315459552080162"
 
-  const type = 'POAO01';
-  const schemaUrl = 'https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld';
+  const type = 'POCO01';
+  const schemaUrl = 'https://raw.githubusercontent.com/Jkrish1011/Crawards-SmartContractsV2.0/main/rawfiles/ProofOfAccountOwnership.jsonld';
    // merklized path to field in the W3C credential according to JSONLD  schema e.g. birthday in the KYCAgeCredential under the url "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld"
-  const schemaClaimPathKey = "5694335137918428426886670805974911405579744201712809311090572756191235262340"
+  const schemaClaimPathKey = "14853083425205678244046821613718442767569851776683237163347527547584736987685"
 
   const requestId = 1;
 
@@ -109,7 +109,7 @@ async function main() {
     claimPathKey: schemaClaimPathKey,
     operator: Operators.EQ,
     slotIndex: 0,
-    value: [20020101, ...new Array(63).fill(0)], // for operators 1-3 only first value matters
+    value: [10001003, ...new Array(63).fill(0)], // for operators 1-3 only first value matters
     circuitIds: ['credentialAtomicQuerySigV2OnChain'],
     skipClaimRevocationCheck: false,
     claimPathNotExists: 0
@@ -126,7 +126,7 @@ async function main() {
     
   // add the address of the contract just deployed
   // const ERC20VerifierAddress = "0xd7c92B1504e8D1e4e7dC056964335EC406116993"
-  const ERC20VerifierAddress = "0xd7c92B1504e8D1e4e7dC056964335EC406116993"
+  const ERC20VerifierAddress = "0x7669575f756177E908e40068a2a1Cd54509D2B27"
 
   let erc20Verifier = await hre.ethers.getContractAt("ERC20Verifier", ERC20VerifierAddress)
 
@@ -140,7 +140,7 @@ async function main() {
         type: 'https://iden3-communication.io/proofs/1.0/contract-invoke-request',
         thid: '7f38a193-0918-4a48-9fac-36adfdb8b542',
         body: {
-          reason: 'Proof of Account Ownership Proving',
+          reason: 'Proof of Account Ownership Proving V2',
           transaction_data: {
             contract_address: ERC20VerifierAddress,
             method_id: 'b68967e2',
@@ -155,8 +155,8 @@ async function main() {
                 allowedIssuers: ['*'],
                 context: schemaUrl,
                 credentialSubject: {
-                  birthday: {
-                    $lt: query.value[0]
+                  AccountID: {
+                    $eq: query.value[0]
                   }
                 },
                 type

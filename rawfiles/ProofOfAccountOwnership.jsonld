@@ -1,23 +1,23 @@
 {
-    "@context": [
-        {
-            "@protected": true,
-            "@version": 1.1,
-            "id": "@id",
-            "type": "@type",
-            "POAO01": {
-                "@context": {
-                    "@propagate": true,
-                    "@protected": true,
-                    "polygon-vocab": "urn:uuid:dec1a493-c0c2-4625-98ca-aca014da3d89#",
-                    "xsd": "http://www.w3.org/2001/XMLSchema#",
-                    "AccountID": {
-                        "@id": "polygon-vocab:AccountID",
-                        "@type": "xsd:string"
-                    }
-                },
-                "@id": "urn:uuid:d2c63001-8a14-4a75-b8fe-868be85c6a85"
-            }
-        }
-    ]
+  "@context": [
+    {
+      "@protected": true,
+      "@version": 1.1,
+      "id": "@id",
+      "type": "@type",
+      "POCO01": {
+        "@context": {
+          "@propagate": true,
+          "@protected": true,
+          "polygon-vocab": "urn:uuid:4082a016-2b48-4f5b-8ca1-4eb7fca49b21#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "AccountID": {
+            "@id": "polygon-vocab:AccountID",
+            "@type": "xsd:double"
+          }
+        },
+        "@id": "urn:uuid:5f4ca689-72e4-4534-a9a5-87110b88e2f9"
+      }
+    }
+  ]
 }

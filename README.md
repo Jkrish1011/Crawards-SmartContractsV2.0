@@ -1,5 +1,7 @@
 # ETHIndia 2023 Hackathon - Smart Contract Files
 
+This project contains logic to deploy your smart contracts.
+
 ## Polygon ID Wallet setup
 
 1. Download the Polygon ID mobile app on the [Google Play](https://play.google.com/store/apps/details?id=com.polygonid.wallet) or [Apple app store](https://apps.apple.com/us/app/polygon-id/id1629870183)
